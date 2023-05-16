@@ -127,7 +127,7 @@ public String registerProductInDb(@ModelAttribute("Product") Product theProduct)
     @GetMapping("/delete/{product_id}")
     public String deleteStudent(@PathVariable("product_id")String product_id) {
         dservice.deletebyId(product_id);
-        return "redirect:/";
+        return "redirect:/admin/home";
     }
 
 //        @GetMapping ("/search")
