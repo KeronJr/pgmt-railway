@@ -87,34 +87,18 @@
   </style>
 </head>
 <body>
-<h2>Welcome to Homepage</h2>
-<p sec:authorize="hasRole('ROLE_ANONYMOUS')">Text visible to anonymous.</p>
+<center><h2>Welcome to P-M G-T</h2></center>
+<!--<p sec:authorize="hasRole('ROLE_ANONYMOUS')">Text visible to anonymous.</p>-->
 <p sec:authorize="hasRole('USER')">Text visible to user.</p>
 <p sec:authorize="hasRole('ADMIN')">Text visible to admin.</p>
-<p sec:authorize="isAuthenticated()">Text visible only to authenticated users.</p>
+<!--<p sec:authorize="isAuthenticated()">Text visible only to authenticated users.</p>-->
 
 <div sec:authorize="hasRole('ROLE_ANONYMOUS')">
   <p><a th:href="@{|/login|}" th:text="'Log in'"></a></p>
   <p><a th:href="@{|/register|}" th:text="'Register'"></a></p>
 </div>
-<p>
-  Our Local Product Management System is a powerful tool designed to streamline and optimize the management of local products.
-  Whether you are a small business owner or a local producer, our system provides you with the tools and features to effectively manage your products, inventory, and sales.
-</p>
-<p>
-  Key Features:
-<ul>
-  <li>Product Catalog: Easily create and organize your product catalog with detailed information, including name, description, price, and more.</li>
-  <li>Inventory Management: Keep track of your inventory levels, receive notifications for low stock, and efficiently manage stock replenishment.</li>
-  <li>Sales and Orders: Process sales, track orders, and generate invoices to keep your sales operations running smoothly.</li>
-  <li>Reporting and Analytics: Gain valuable insights into your product performance, sales trends, and customer behavior with comprehensive reporting and analytics tools.</li>
-  <li>User Management: Control access to your system with user roles and permissions, allowing you to delegate tasks and responsibilities.</li>
-</ul>
-</p>
-<p>
-  With our Local Product Management System, you can focus on growing your business and delivering exceptional products to your local customers.
-  Experience the convenience and efficiency of managing your local products with our user-friendly and feature-rich system.
-</p>
+
+
 <div sec:authorize="isAuthenticated()">
   <p>Logged as: <span sec:authentication="name"></span></p>
   <p>Has role: <span sec:authentication="authorities"></span></p>
