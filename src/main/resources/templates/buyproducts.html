@@ -94,13 +94,13 @@
         <h1>BUY PRODUCTS</h1>
         <form th:action="@{/newbuys}" th:object="${buyout}" method="POST">
             <label for="product_name">Product Name:</label>
-            <select id="product_name" name="product_name" th:field="*{product}" onchange="updatePriceAndTotal()">
+            <select id="product_name" name="product_name" th:field="*{product}" onchange>
                 <option th:each="product, iterStat : ${products}" th:value="${product.getProduct_id()}"
                         th:text="${product.product_name}" th:selected="${iterStat.index == 0}"></option>
             </select>
 
             <label for="product_price">Product Price:</label>
-            <select id="product_price" name="product_price" onchange="updateTotalPrice()">
+            <select id="product_price" name="product_price" >
                 <option th:each="product, iterStat : ${products}" th:value="${product.getProduct_id()}"
                         th:text="${product.product_price}" th:selected="${iterStat.index == 0}"></option>
             </select>
@@ -108,11 +108,11 @@
 
             <div>
                 <label for="quantity">Product Quantity:</label>
-                <input type="number" id="quantity" name="quantity" oninput="updateTotalPrice()" min="1" step="1" th:field="*{quantity}">
+                <input type="number" id="quantity" name="quantity"  min="1" step="1" th:field="*{quantity}">
 
                 <div>
                     <label for="total_price">Total Price:</label>
-                    <input type="number" id="total_price" name="total_price" th:field="*{total_price}" >
+                    <input type="number" id="total_price" name="total_price" th:field="*{total_price}">
                 </div>
 
                 <button type="submit">Save</button>
