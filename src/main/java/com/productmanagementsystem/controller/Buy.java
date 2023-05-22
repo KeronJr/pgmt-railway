@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
@@ -135,7 +136,7 @@ public class Buy {
     }
 
     @PostMapping("/search")
-    public String getEmployee(@ModelAttribute("search") Buyproducts soldier, Model model){
+    public String getproduct(@ModelAttribute("search") Buyproducts soldier, Model model){
         Buyproducts soldier1=buyService.getBuysProductById(soldier.getBuy_id());
         if (soldier1!=null) {
             model.addAttribute("soldier1",soldier1);
@@ -146,5 +147,18 @@ public class Buy {
         }
     }
 
+    @GetMapping("/edit/{buy_id}")
+    public String editproductForm(@PathVariable("buy_id") int buy_id, Model model) {
+        Buyproducts products = buyService.getBuysProductById(buy_id);
+        model.addAttribute("products", productService.getAllmodels());
+        model.addAttribute("buyout", products);
+        return "editbuyproducts";
+    }
+
+    @GetMapping("/delete/{buy_id}")
+    public String deleteproduct(@PathVariable("buy_id")int buy_id) {
+        buyService.deletebyId(buy_id);
+        return "redirect:/admin/home";
+    }
 
 }

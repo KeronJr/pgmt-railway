@@ -117,15 +117,15 @@ public String registerProductInDb(@ModelAttribute("Product") Product theProduct)
 
 
 
-    @GetMapping("/edit/{product_id}")
-    public String editStudentForm(@PathVariable("product_id") String product_id, Model model){
-        Optional<Product> products =dservice.getAllmodelById(product_id);
+    @GetMapping("/edits/{product_id}")
+    public String editproductForm(@PathVariable(value="product_id") String product_id, Model model){
+        Product products =dservice.getProductById(product_id);
         model.addAttribute("Product", products);
         return "edit";
     }
 
-    @GetMapping("/delete/{product_id}")
-    public String deleteStudent(@PathVariable("product_id")String product_id) {
+    @GetMapping("/deletes/{product_id}")
+    public String deleteproduct(@PathVariable(value="product_id")String product_id) {
         dservice.deletebyId(product_id);
         return "redirect:/admin/home";
     }

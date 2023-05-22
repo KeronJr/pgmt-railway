@@ -68,6 +68,16 @@ public class Buyservice_Implementation implements BuyService{
         return buyproducts;
     }
 
+    @Override
+    public Optional<Buyproducts> getAllmodelById(int buy_id) {
+        return buyRepo.findById(buy_id);
+    }
+
+    @Override
+    public void deletebyId(int buy_id) {
+        buyRepo.deleteById(buy_id);
+    }
+
 //    @Transactional
 //    @Override
 //    public void savebuyproducts(Buydto buydto) {
