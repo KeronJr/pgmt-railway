@@ -12,19 +12,19 @@ import com.productmanagementsystem.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.data.domain.Page;
-import org.springframework.data.repository.query.Param;
+//import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+//import org.springframework.web.multipart.MultipartFile;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
+//import java.util.Optional;
 
 @Controller
 public class ProductController {
@@ -162,7 +162,7 @@ public String registerProductInDb(@ModelAttribute("Product") Product theProduct)
     @PostMapping("/searchps")
     public String getEmployee(@ModelAttribute("searchps") Product soldier, Model model){
         Product soldier1=dservice.getProductById(soldier.getProduct_id());
-        if (soldier1!=null) {
+            if (soldier1!=null) {
             model.addAttribute("soldier1",soldier1);
             return "searchlist";
         }else {
