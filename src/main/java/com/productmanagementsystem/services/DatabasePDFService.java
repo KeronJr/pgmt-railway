@@ -64,7 +64,7 @@ public class DatabasePDFService {
                 lastNameCell.setPaddingRight(4);
                 table.addCell(lastNameCell);
  
-                PdfPCell cat = new PdfPCell(new Phrase(String.valueOf(product.getProduct_category())));
+                PdfPCell cat = new PdfPCell(new Phrase(String.valueOf(product.getProduct_price())));
                 cat.setVerticalAlignment(Element.ALIGN_MIDDLE);
                 cat.setHorizontalAlignment(Element.ALIGN_CENTER);
                 cat.setPaddingRight(4);
