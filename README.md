@@ -82,7 +82,7 @@ The Product Management System is a web-based application that enables low level 
 
 To use the application, you need to follow these steps:
 
-1. Visit the website https://kj-productmanagement.herokuapp.com/ and  upon request you you will be faced with a Login page.
+1. Visit the website: https://pgmt-railway-production.up.railway.app/ and  upon request you you will be faced with a Login page.
 2. Enter your username and password that you created. If you do not have an account, you can request one by clicking on the "Register" button and filling out the form with your details.
 3. Once you are logged in, you will see a dashboard with various options to access different features of the application. You can use the menu on the left side of the screen to navigate between different sections, such as "Add Products", "List Products", "Buy Products ",” List Bought Products , for the admin.
 4. To add a new product into stock, click on the "Add Products" section and then enter its details
@@ -96,7 +96,7 @@ To use the application, you need to follow these steps:
 More detail explanation
 
 
-Visit the website https://kj-productmanagement.herokuapp.com/ and click on the "Login" button on the top of the homepage.
+Visit the website https://pgmt-railway-production.up.railway.app/ and click on the "Login" button on the top of the homepage.
 
 Login Credentials
 To access the application as an admin, please use the following login credentials:
